@@ -320,6 +320,22 @@
     "enviado": null
   },
   {
+    "fecha": "2026-06-23",
+    "sucursal": "City Center",
+    "pct": 94.0,
+    "errores": 11,
+    "falt": 11,
+    "sobr": 0,
+    "hf": 0,
+    "hs": 0,
+    "pf": 9,
+    "ps": 0,
+    "if_": 2,
+    "is_": 0,
+    "archivo": "Resultado Auditoria 23-6-2026 - City Center - 94_0pct - 11F0S - H0F0S - P9F0S - I2F0S.pdf",
+    "enviado": null
+  },
+  {
     "fecha": "2026-07-02",
     "sucursal": "P. del Bosque",
     "pct": 100,
@@ -365,22 +381,6 @@
     "if_": 3,
     "is_": 0,
     "archivo": "Resultado Auditoria 6-7-2026 - Fisherton - 98_8pct - 3F0S - H0F0S - P0F0S - I3F0S.pdf",
-    "enviado": null
-  },
-  {
-    "fecha": "2026-07-09",
-    "sucursal": "City Center",
-    "pct": 94.7,
-    "errores": 9,
-    "falt": 8,
-    "sobr": 1,
-    "hf": 3,
-    "hs": 0,
-    "pf": 4,
-    "ps": 1,
-    "if_": 1,
-    "is_": 0,
-    "archivo": "Resultado Auditoria 9-7-2026 - City Center - 94_7pct - 8F1S - H3F0S - P4F1S - I1F0S.pdf",
     "enviado": null
   }
 ]
