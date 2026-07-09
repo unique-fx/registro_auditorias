@@ -1,0 +1,97 @@
+name: Actualizar registro de auditorias
+
+# Se dispara cuando Power Automate envia el "timbre" (repository_dispatch)
+# con event type = nueva-auditoria
+on:
+  repository_dispatch:
+    types: [nueva-auditoria]
+
+# Permiso para que la Action pueda escribir en el repo
+permissions:
+  contents: write
+
+jobs:
+  actualizar:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Traer el repositorio
+        uses: actions/checkout@v4
+
+      - name: Agregar la auditoria al registro.json
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+
+            // --- Datos que llegaron en el "timbre" desde Power Automate ---
+            const payload = context.payload.client_payload || {};
+            const archivo = (payload.archivo || '').toString().trim();
+            const fechaPA = (payload.fecha || '').toString().trim();      // respaldo
+            const sucursalPA = (payload.sucursal || '').toString().trim(); // respaldo
+
+            if (!archivo) {
+              core.setFailed('No llego el nombre de archivo en client_payload.archivo');
+              return;
+            }
+
+            // --- Parser del nombre del PDF ---
+            // Formato: Resultado Auditoria D-M-YYYY - [Sucursal] - [pct]pct - [F]F[S]S - H..F..S - P..F..S - I..F..S.pdf
+            function parse(fname){
+              let base = fname.toLowerCase().endsWith('.pdf') ? fname.slice(0,-4) : fname;
+              const parts = base.split(' - ').map(s=>s.trim());
+              const rec = {fecha:null,sucursal:'',pct:null,errores:null,falt:null,sobr:null,
+                           hf:null,hs:null,pf:null,ps:null,if_:null,is_:null,archivo:fname,enviado:null};
+              // fecha
+              const m = parts[0].match(/Resultado Auditoria\s+(\d{1,2})-(\d{1,2})-(\d{4})/i);
+              if(m){ const d=+m[1],mo=+m[2],y=+m[3];
+                rec.fecha = `${y}-${String(mo).padStart(2,'0')}-${String(d).padStart(2,'0')}`; }
+              // sucursal
+              rec.sucursal = parts[1] || '';
+              // resto (metricas)
+              const rest = parts.slice(2).join(' - ');
+              const mp = rest.match(/(\d+)_(\d+)pct/);
+              if(mp) rec.pct = parseFloat(`${mp[1]}.${mp[2]}`);
+              const mtot = rest.match(/pct\s*-\s*(\d+)F(\d+)S/);
+              if(mtot){ rec.falt=+mtot[1]; rec.sobr=+mtot[2]; }
+              const fs2 = (tag)=>{ const r = rest.match(new RegExp(tag+'(\\d+)F(\\d+)S')); return r?[+r[1],+r[2]]:[null,null]; };
+              [rec.hf,rec.hs]=fs2('H'); [rec.pf,rec.ps]=fs2('P'); [rec.if_,rec.is_]=fs2('I');
+              if(rec.falt!==null && rec.sobr!==null) rec.errores = rec.falt + rec.sobr;
+              return rec;
+            }
+
+            const nuevo = parse(archivo);
+            // Respaldo: si el nombre no traia fecha/sucursal, usar lo que mando Power Automate
+            if(!nuevo.fecha && fechaPA)   nuevo.fecha = fechaPA.slice(0,10);
+            if(!nuevo.sucursal && sucursalPA) nuevo.sucursal = sucursalPA;
+
+            // --- Leer registro.json actual ---
+            let data = [];
+            try {
+              const txt = fs.readFileSync('registro.json','utf8');
+              data = JSON.parse(txt);
+              if(!Array.isArray(data)) data = [];
+            } catch(e) { data = []; }
+
+            // --- Evitar duplicados: si ya existe ese archivo, lo reemplaza ---
+            const idx = data.findIndex(r => (r.archivo||'') === nuevo.archivo);
+            if(idx >= 0) data[idx] = nuevo;
+            else data.push(nuevo);
+
+            // Ordenar por fecha
+            data.sort((a,b)=> (a.fecha||'').localeCompare(b.fecha||''));
+
+            // --- Guardar ---
+            fs.writeFileSync('registro.json', JSON.stringify(data, null, 2) + '\n', 'utf8');
+            console.log('Registro actualizado. Total:', data.length, '| Agregado:', JSON.stringify(nuevo));
+
+      - name: Commit y push
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add registro.json
+          if git diff --staged --quiet; then
+            echo "Sin cambios que commitear."
+          else
+            git commit -m "Auditoria nueva (via Power Automate)"
+            git push
+          fi
