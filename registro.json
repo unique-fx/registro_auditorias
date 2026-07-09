@@ -226,7 +226,7 @@
   {
     "fecha": "2026-06-08",
     "sucursal": "Tierra Chica",
-    "pct": 87.0,
+    "pct": 87,
     "errores": 18,
     "falt": 17,
     "sobr": 1,
@@ -365,6 +365,22 @@
     "if_": 3,
     "is_": 0,
     "archivo": "Resultado Auditoria 6-7-2026 - Fisherton - 98_8pct - 3F0S - H0F0S - P0F0S - I3F0S.pdf",
+    "enviado": null
+  },
+  {
+    "fecha": "2026-07-09",
+    "sucursal": "Pellegrini",
+    "pct": 95.5,
+    "errores": 5,
+    "falt": 4,
+    "sobr": 1,
+    "hf": 1,
+    "hs": 0,
+    "pf": 2,
+    "ps": 1,
+    "if_": 1,
+    "is_": 0,
+    "archivo": "Resultado Auditoria 9-7-2026 - Pellegrini - 95_5pct - 4F1S - H1F0S - P2F1S - I1F0S.pdf",
     "enviado": null
   }
 ]
