@@ -322,7 +322,7 @@
   {
     "fecha": "2026-06-23",
     "sucursal": "City Center",
-    "pct": 94.0,
+    "pct": 94,
     "errores": 11,
     "falt": 11,
     "sobr": 0,
@@ -429,6 +429,22 @@
     "if_": 3,
     "is_": 0,
     "archivo": "Resultado Auditoria 6-7-2026 - Fisherton - 98_8pct - 3F0S - H0F0S - P0F0S - I3F0S.pdf",
+    "enviado": null
+  },
+  {
+    "fecha": "2026-07-10",
+    "sucursal": "City Center",
+    "pct": 94.6,
+    "errores": 11,
+    "falt": 6,
+    "sobr": 5,
+    "hf": 1,
+    "hs": 0,
+    "pf": 5,
+    "ps": 5,
+    "if_": 0,
+    "is_": 0,
+    "archivo": "Resultado Auditoria 10-7-2026 - City Center - 94_6pct - 6F5S - H1F0S - P5F5S - I0F0S.pdf",
     "enviado": null
   }
 ]
