@@ -446,5 +446,21 @@
     "is_": 0,
     "archivo": "Resultado Auditoria 10-7-2026 - City Center - 94_6pct - 6F5S - H1F0S - P5F5S - I0F0S.pdf",
     "enviado": null
+  },
+  {
+    "fecha": "2026-07-13",
+    "sucursal": "Mendoza",
+    "pct": 96.1,
+    "errores": 18,
+    "falt": 13,
+    "sobr": 5,
+    "hf": 8,
+    "hs": 3,
+    "pf": 3,
+    "ps": 0,
+    "if_": 2,
+    "is_": 2,
+    "archivo": "Resultado Auditoria 13-7-2026 - Mendoza - 96_1pct - 13F5S - H8F3S - P3F0S - I2F2S.pdf",
+    "enviado": null
   }
 ]
