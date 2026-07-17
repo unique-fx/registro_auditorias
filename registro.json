@@ -462,5 +462,21 @@
     "is_": 2,
     "archivo": "Resultado Auditoria 13-7-2026 - Mendoza - 96_1pct - 13F5S - H8F3S - P3F0S - I2F2S.pdf",
     "enviado": null
+  },
+  {
+    "fecha": "2026-07-17",
+    "sucursal": "Mercado Don Bosco",
+    "pct": 85.4,
+    "errores": 7,
+    "falt": 1,
+    "sobr": 6,
+    "hf": 0,
+    "hs": 0,
+    "pf": 1,
+    "ps": 6,
+    "if_": 0,
+    "is_": 0,
+    "archivo": "Resultado Auditoria 17-7-2026 - Mercado Don Bosco - 85_4pct - 1F6S - H0F0S - P1F6S - I0F0S.pdf",
+    "enviado": null
   }
 ]
