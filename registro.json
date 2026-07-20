@@ -510,5 +510,21 @@
     "is_": 0,
     "archivo": "Resultado Auditoria 17-7-2026 - Tierra Chica - 88_9pct - 2F5S - H0F0S - P2F5S - I0F0S.pdf",
     "enviado": null
+  },
+  {
+    "fecha": "2026-07-20",
+    "sucursal": "Pellegrini",
+    "pct": 97.2,
+    "errores": 10,
+    "falt": 1,
+    "sobr": 9,
+    "hf": 1,
+    "hs": 4,
+    "pf": 0,
+    "ps": 3,
+    "if_": 0,
+    "is_": 2,
+    "archivo": "Resultado Auditoria 20-7-2026 - Pellegrini - 97_2pct - 1F9S - H1F4S - P0F3S - I0F2S.pdf",
+    "enviado": null
   }
 ]
