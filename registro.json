@@ -526,5 +526,21 @@
     "is_": 2,
     "archivo": "Resultado Auditoria 20-7-2026 - Pellegrini - 97_2pct - 1F9S - H1F4S - P0F3S - I0F2S.pdf",
     "enviado": null
+  },
+  {
+    "fecha": "2026-07-23",
+    "sucursal": "Mercado del Rio",
+    "pct": 98.3,
+    "errores": 1,
+    "falt": 0,
+    "sobr": 1,
+    "hf": 0,
+    "hs": 1,
+    "pf": 0,
+    "ps": 0,
+    "if_": 0,
+    "is_": 0,
+    "archivo": "Resultado Auditoria 23-7-2026 - Mercado del Rio - 98_3pct - 0F1S - H0F1S - P0F0S - I0F0S.pdf",
+    "enviado": null
   }
 ]
