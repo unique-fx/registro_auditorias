@@ -558,5 +558,21 @@
     "is_": 2,
     "archivo": "Resultado Auditoria 24-7-2026 - Newbery - 98_8pct - 2F2S - H0F0S - P1F0S - I1F2S.pdf",
     "enviado": null
+  },
+  {
+    "fecha": "2026-07-24",
+    "sucursal": "Newbery",
+    "pct": 99,
+    "errores": 4,
+    "falt": 2,
+    "sobr": 2,
+    "hf": 0,
+    "hs": 0,
+    "pf": 1,
+    "ps": 0,
+    "if_": 1,
+    "is_": 2,
+    "archivo": "Resultado Auditoria 24-7-2026 - Newbery - 99_0pct - 2F2S - H0F0S - P1F0S - I1F2S.pdf",
+    "enviado": null
   }
 ]
