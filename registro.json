@@ -574,5 +574,21 @@
     "is_": 2,
     "archivo": "Resultado Auditoria 24-7-2026 - Newbery - 99_0pct - 2F2S - H0F0S - P1F0S - I1F2S.pdf",
     "enviado": null
+  },
+  {
+    "fecha": "2026-07-28",
+    "sucursal": "P. del Bosque",
+    "pct": 99.5,
+    "errores": 2,
+    "falt": 1,
+    "sobr": 1,
+    "hf": 0,
+    "hs": 0,
+    "pf": 0,
+    "ps": 0,
+    "if_": 1,
+    "is_": 1,
+    "archivo": "Resultado Auditoria 28-7-2026 - P. del Bosque - 99_5pct - 1F1S - H0F0S - P0F0S - I1F1S.pdf",
+    "enviado": null
   }
 ]
