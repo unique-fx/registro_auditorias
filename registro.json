@@ -606,5 +606,21 @@
     "is_": 0,
     "archivo": "Resultado Auditoria 30-7-2026 - Libertad - 98_6pct - 1F0S - H0F0S - P1F0S - I0F0S.pdf",
     "enviado": null
+  },
+  {
+    "fecha": "2026-07-31",
+    "sucursal": "Fisherton",
+    "pct": 98.2,
+    "errores": 2,
+    "falt": 2,
+    "sobr": 0,
+    "hf": 2,
+    "hs": 0,
+    "pf": 0,
+    "ps": 0,
+    "if_": 0,
+    "is_": 0,
+    "archivo": "Resultado Auditoria 31-7-2026 - Fisherton - 98_2pct - 2F0S - H2F0S - P0F0S - I0F0S.pdf",
+    "enviado": null
   }
 ]
